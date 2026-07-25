@@ -1,7 +1,7 @@
 ---
 title: "Tailwind CSSでスタイル調整"
 description: "Tailwindを使って簡単にデザインを整える方法。"
-date: 2026-07-23
+pubDate: 2026-07-23
 tags: ["css", "tailwind"]
 draft: false
 ---

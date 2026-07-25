@@ -1,7 +1,7 @@
 ---
 title: "Astroの基礎"
 description: "Astroを使った静的サイト生成の基本について。"
-date: 2026-07-22
+pubDate: 2026-07-22
 tags: ["astro", "ssg"]
 draft: false
 ---

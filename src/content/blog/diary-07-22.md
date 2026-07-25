@@ -1,7 +1,7 @@
 ---
 title: "今日の日記"
 description: "今日の出来事と雑記。"
-date: 2026-07-22
+pubDate: 2026-07-22
 tags: ["diary"]
 draft: false
 ---

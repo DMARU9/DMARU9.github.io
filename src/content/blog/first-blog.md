@@ -1,7 +1,7 @@
 ---
 title: "初めてのブログ"
 description: "これはテスト用のブログ記事です。"
-date: 2026-07-21
+pubDate: 2026-07-21
 tags: ["blog", "astro"]
 draft: false
 ---
