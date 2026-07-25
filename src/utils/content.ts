@@ -1,3 +1,14 @@
+/**
+ * Get blog posts, filtering out drafts in production.
+ * In dev mode, all posts (including drafts) are returned.
+ */
+export async function getPublishedPosts() {
+  const { getCollection } = await import("astro:content");
+  return getCollection("blog", ({ data }) =>
+    import.meta.env.PROD ? !data.draft : true,
+  );
+}
+
 export function estimateReadingMinutes(body: string) {
   const plainText = body
     .replace(/```[\s\S]*?```/g, " ")

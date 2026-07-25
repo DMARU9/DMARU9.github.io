@@ -131,7 +131,7 @@ html.dark .content-prose .astro-code,html.dark .content-prose .astro-code span {
 .sidebar-section-list li a { display:flex; padding:0 0 var(--list-row-gap); justify-content:space-between; gap:.5rem; color:var(--text-secondary); font-size:var(--text-sm); text-decoration:none; }
 .sidebar-section-list li + li a { padding-top:var(--list-row-gap); }
 .sidebar-section-list small,.sidebar-tags small { color:var(--text-muted); font-size:var(--text-xs); }
-.sidebar-tags { display:flex; flex-wrap:wrap; gap:.3rem .65rem; }
+.sidebar-tags { display:flex; flex-direction:column; gap:.3rem; }
 .sidebar-tags a { color:var(--text-secondary); font-size:var(--text-sm); text-decoration:none; }
 .sidebar-tags a:hover,.archive-link:hover { color:var(--accent); }
 .archive-link { display:inline-flex; align-items:baseline; gap:.2rem; }
