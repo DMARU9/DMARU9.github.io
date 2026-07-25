@@ -1,0 +1,22 @@
+---
+import { getCollectionPaths } from '@/lib/content';
+import { render } from 'astro:content';
+import Layout from '@/layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  return await getCollectionPaths('blogs');
+}
+
+const { item: blog } = Astro.props;
+const { Content } = await render(blog);
+---
+
+<Layout title={blog.data.title}>
+  <main class="max-w-3xl mx-auto px-6 md:px-8 py-16">
+    <h1 class="text-4xl font-bold text-zinc-900 mb-4">{blog.data.title}</h1>
+    <p class="text-zinc-600 mb-8">{blog.data.date.toLocaleDateString()}</p>
+    <div class="prose max-w-none">
+      <Content />
+    </div>
+  </main>
+</Layout>

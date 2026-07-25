@@ -1,0 +1,22 @@
+---
+// src/pages/posts/index.astro
+import Layout from "@/layouts/Layout.astro";
+import { getCollection } from "astro:content";
+
+const posts = await getCollection("posts");
+const baseUrl = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<Layout title="Posts">
+  <main class="max-w-3xl mx-auto px-6 md:px-8 py-16">
+    <h1 class="text-4xl font-bold text-zinc-900 mb-8">Posts</h1>
+    <div class="space-y-6">
+      {posts.map((post) => (
+        <a href={`${baseUrl}/posts/${post.id}`} class="block p-6 bg-white border rounded-2xl shadow-sm hover:shadow-md transition">
+          <h2 class="text-2xl font-semibold mb-2">{post.data.title}</h2>
+          <p class="text-zinc-600">{post.data.description}</p>
+        </a>
+      ))}
+    </div>
+  </main>
+</Layout>
