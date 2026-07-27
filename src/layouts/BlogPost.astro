@@ -32,3 +32,30 @@ const { title, description, pubDate, updatedDate, heroImage, collection, tags = 
   .description { margin:.45rem 0 0; color:var(--text-secondary); font-size:var(--text-sm); } .meta,.tags { display:flex; margin-top:.55rem; flex-wrap:wrap; gap:.35rem .8rem; color:var(--text-muted); font-size:var(--text-xs); } .tags { margin-top:.35rem; } .tags a { text-decoration:none; }
   .hero-image { margin-bottom:1.4rem; } .hero-image img { width:100%; }
 </style>
+<script>
+  document.addEventListener("click", (e) => {
+    const img = e.target.closest(".content-prose img, .hero-image img");
+    if (!img || img.closest(".lightbox-overlay")) return;
+
+    const isDark = document.documentElement.classList.contains("dark");
+    const overlay = document.createElement("div");
+    overlay.className = "lightbox-overlay";
+    overlay.style.cssText = `position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:${isDark ? "rgba(0,0,0,.85)" : "rgba(0,0,0,.7)"};cursor:zoom-out;opacity:0;transition:opacity .25s ease;`;
+    overlay.innerHTML = `<img src="${img.src}" alt="${img.alt || ""}" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.4);cursor:default;">`;
+
+    const close = () => {
+      overlay.style.opacity = "0";
+      setTimeout(() => { if (overlay.parentNode) overlay.remove(); }, 260);
+      document.removeEventListener("keydown", onKey);
+    };
+    const onKey = (e) => { if (e.key === "Escape") close(); };
+    overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
+    overlay.querySelector("img").addEventListener("click", (e) => e.stopPropagation());
+    document.addEventListener("keydown", onKey);
+
+    document.body.appendChild(overlay);
+    // Trigger paint of initial state before transitioning
+    overlay.offsetHeight;
+    overlay.style.opacity = "1";
+  });
+</script>
