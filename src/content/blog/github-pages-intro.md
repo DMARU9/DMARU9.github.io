@@ -8,6 +8,19 @@ draft: false
 
 # GitHub Pages でウェブサイトを公開しよう
 
+## 目次
+
+- [はじめに](#はじめに)
+- [GitHub Pages とは？](#github-pages-とは)
+- [準備するもの](#準備するもの)
+- [3 ステップで公開しよう](#3-ステップで公開しよう)
+- [公開完了！URL を確認しよう](#公開完了url-を確認しよう)
+- [サイトを更新するには](#サイトを更新するには)
+- [プロジェクトを追加するには](#プロジェクトを追加するには)
+- [まとめ](#まとめ)
+
+---
+
 ## はじめに
 
 「自分の Web サイトを持ちたい」「作ったページをインターネットに公開してみたい」
@@ -82,9 +95,15 @@ https://（ユーザー名）.github.io/
 
 ここからが本番です。たった 3 つのステップでサイトを公開できます。
 
-> **STEP 1**: リポジトリ（保管フォルダ）を作る
-> **STEP 2**: `index.html`（ページの中身）を作る
-> **STEP 3**: 公開設定を確認する
+```mermaid
+%%{init: {"htmlLabels": true, "flowchart": {"wrappingWidth": 320, "padding": 16}, "fontSize": 14} }%%
+flowchart LR
+    Start(["🎬 スタート"])
+    Start --> Step1["📁 STEP 1 リポジトリを作る"]
+    Step1 --> Step2["📝 STEP 2 index.html を作る"]
+    Step2 --> Step3["⚙️ STEP 3 公開設定を確認する"]
+    Step3 --> Done(["🎉 公開完了！"])
+```
 
 それぞれ 5 分もあればできます。
 
@@ -98,14 +117,14 @@ https://（ユーザー名）.github.io/
 
 1. GitHub にログインし、右上の [+] ボタンをクリック → **New repository** を選択
 
-> ![GitHub の「+」ボタン → New repository メニュー](/images/blog/New_repository.png)
+> ![GitHub の「+」ボタン → New repository メニュー](/images/blog/github-pages-intro/New_repository.webp)
 
 2. **Repository name** に `（ユーザー名）.github.io` と入力する  
    例：ユーザー名が `DMARU9` なら、`DMARU9.github.io`
 3. **Public**（公開）が選ばれていることを確認する
 4. **Create repository** ボタンをクリック
 
-> ![リポジトリ作成](/images/blog/create_repository.png)
+> ![リポジトリ作成](/images/blog/github-pages-intro/create_repository.webp)
 
 #### リポジトリ名のルール
 
@@ -129,11 +148,11 @@ https://（ユーザー名）.github.io/
 
 1. リポジトリのページで **Add file** → **Create new file** をクリック
 
-> ![Add file ボタン](/images/blog/add_file.png)
+> ![Add file ボタン](/images/blog/github-pages-intro/add_file.webp)
 
 2. ファイル名の欄に `index.html` と入力する
 
-> ![index_html](/images/blog/index_html.png)
+> ![index_html](/images/blog/github-pages-intro/index_html.webp)
 
 
 #### なぜ「index.html」という名前なのか？
@@ -184,11 +203,11 @@ Web サーバーには **「フォルダを開いたとき、まず `index.html`
 1. リポジトリページ上部の **Settings** タブをクリック
 2. 左のメニューから **Pages** を選択
 
-> ![pages](/images/blog/pages.png)
+> ![pages](/images/blog/github-pages-intro/pages.webp)
 
 3. 「Your site is live at `https://（ユーザー名）.github.io/`」と表示されていれば OK！
 
-> ![visit_site](/images/blog/visit_site.png)
+> ![visit_site](/images/blog/github-pages-intro/visit_site.webp)
 
 表示されない場合は 2〜3 分待ってからページを再読み込みしてみてください。
 

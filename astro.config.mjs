@@ -13,7 +13,21 @@ export default defineConfig({
 	base: process.env.BASE_PATH ?? '/',
 	integrations: [mdx(), sitemap()],
 	markdown: {
-		processor: unified({ remarkPlugins: [remarkMermaid] }),
+		processor: unified({
+			remarkPlugins: [
+				[remarkMermaid, {
+					mermaidConfig: {
+						htmlLabels: true,
+						fontFamily: '"Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif',
+						fontSize: 14,
+						flowchart: {
+							wrappingWidth: 320,
+							padding: 16,
+						},
+					},
+				}],
+			],
+		}),
 		shikiConfig: {
 			themes: {
 				light: 'github-light',
