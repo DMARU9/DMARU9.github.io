@@ -35,13 +35,30 @@ const { title, description, pubDate, updatedDate, heroImage, collection, tags = 
 <script>
   document.addEventListener("click", (e) => {
     const img = e.target.closest(".content-prose img, .hero-image img");
-    if (!img || img.closest(".lightbox-overlay")) return;
+    const svg = !img ? e.target.closest(".content-prose svg[id^=\"mermaid-\"]") : null;
+    const target = img || svg;
+    if (!target || target.closest(".lightbox-overlay")) return;
 
     const isDark = document.documentElement.classList.contains("dark");
     const overlay = document.createElement("div");
     overlay.className = "lightbox-overlay";
     overlay.style.cssText = `position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:${isDark ? "rgba(0,0,0,.85)" : "rgba(0,0,0,.7)"};cursor:zoom-out;opacity:0;transition:opacity .25s ease;`;
-    overlay.innerHTML = `<img src="${img.src}" alt="${img.alt || ""}" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.4);cursor:default;">`;
+
+    if (img) {
+      overlay.innerHTML = `<img src="${img.src}" alt="${img.alt || ""}" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.4);cursor:default;">`;
+    } else {
+      const clone = svg.cloneNode(true);
+      clone.removeAttribute("width");
+      clone.style.maxWidth = "90vw";
+      clone.style.maxHeight = "90vh";
+      clone.style.width = "auto";
+      clone.style.height = "auto";
+      clone.style.borderRadius = "6px";
+      clone.style.boxShadow = "0 8px 40px rgba(0,0,0,.4)";
+      clone.style.background = isDark ? "#1e1e1e" : "#fff";
+      clone.style.cursor = "default";
+      overlay.appendChild(clone);
+    }
 
     const close = () => {
       overlay.style.opacity = "0";
@@ -50,11 +67,11 @@ const { title, description, pubDate, updatedDate, heroImage, collection, tags = 
     };
     const onKey = (e) => { if (e.key === "Escape") close(); };
     overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
-    overlay.querySelector("img").addEventListener("click", (e) => e.stopPropagation());
+    const inner = overlay.querySelector("img, svg");
+    if (inner) inner.addEventListener("click", (e) => e.stopPropagation());
     document.addEventListener("keydown", onKey);
 
     document.body.appendChild(overlay);
-    // Trigger paint of initial state before transitioning
     overlay.offsetHeight;
     overlay.style.opacity = "1";
   });

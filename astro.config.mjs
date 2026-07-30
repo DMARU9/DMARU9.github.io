@@ -17,8 +17,8 @@ export default defineConfig({
 			remarkPlugins: [
 				[remarkMermaid, {
 					mermaidConfig: {
-						htmlLabels: true,
-						fontFamily: '"Noto Sans JP", "Hiragino Sans", "Yu Gothic", sans-serif',
+						htmlLabels: false,
+						fontFamily: '"Noto Sans CJK JP", "Hiragino Sans", "Yu Gothic", sans-serif',
 						fontSize: 14,
 						flowchart: {
 							wrappingWidth: 320,

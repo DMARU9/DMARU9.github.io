@@ -96,7 +96,7 @@ https://（ユーザー名）.github.io/
 ここからが本番です。たった 3 つのステップでサイトを公開できます。
 
 ```mermaid
-%%{init: {"htmlLabels": true, "flowchart": {"wrappingWidth": 320, "padding": 16}, "fontSize": 14} }%%
+%%{init: {"htmlLabels": false, "flowchart": {"wrappingWidth": 320, "padding": 16}, "fontSize": 14} }%%
 flowchart LR
     Start(["🎬 スタート"])
     Start --> Step1["📁 STEP 1 リポジトリを作る"]
