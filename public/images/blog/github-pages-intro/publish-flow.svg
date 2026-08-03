@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-label="GitHub Pages 公開フロー">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a" />
+      <stop offset="100%" style="stop-color:#1e293b" />
+    </linearGradient>
+    <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6" />
+      <stop offset="100%" style="stop-color:#2563eb" />
+    </linearGradient>
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7" />
+      <stop offset="100%" style="stop-color:#9333ea" />
+    </linearGradient>
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e" />
+      <stop offset="100%" style="stop-color:#16a34a" />
+    </linearGradient>
+    <linearGradient id="amber-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b" />
+      <stop offset="100%" style="stop-color:#d97706" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow-green">
+      <feDropShadow dx="0" dy="0" stdDeviation="8" flood-color="#22c55e" flood-opacity="0.5"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#475569" />
+    </marker>
+  </defs>
+
+  <!-- ダーク背景 -->
+  <rect width="100%" height="100%" fill="url(#bg-gradient)" rx="16" />
+
+  <!-- タイトル -->
+  <rect x="0" y="0" width="900" height="56" rx="16" fill="rgba(255,255,255,0.05)" />
+  <text x="40" y="36" font-family="'Noto Sans JP', sans-serif" font-size="20" font-weight="700" fill="#f8fafc">🚀 GitHub Pages 公開フロー</text>
+
+  <!-- ステップライン -->
+  <line x1="100" y1="200" x2="800" y2="200" stroke="rgba(255,255,255,0.08)" stroke-width="4" stroke-linecap="round" />
+
+  <!-- STEP 1 -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="100" width="220" height="180" rx="14" fill="rgba(59,130,246,0.08)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+    <circle cx="150" cy="140" r="30" fill="url(#blue-gradient)" />
+    <circle cx="150" cy="140" r="24" fill="#0f172a" />
+    <text x="150" y="147" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="18" fill="#3b82f6" font-weight="700">1</text>
+    <text x="150" y="200" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="15" fill="#f8fafc" font-weight="600">📁 リポジトリを作る</text>
+    <text x="150" y="225" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#94a3b8">ユーザー名.github.io</text>
+    <text x="150" y="245" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#94a3b8">という名前で作成</text>
+  </g>
+
+  <!-- 矢印 1→2 -->
+  <line x1="260" y1="200" x2="310" y2="200" stroke="#475569" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- STEP 2 -->
+  <g filter="url(#shadow)">
+    <rect x="310" y="100" width="220" height="180" rx="14" fill="rgba(168,85,247,0.08)" stroke="rgba(168,85,247,0.3)" stroke-width="1" />
+    <circle cx="420" cy="140" r="30" fill="url(#purple-gradient)" />
+    <circle cx="420" cy="140" r="24" fill="#0f172a" />
+    <text x="420" y="147" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="18" fill="#a855f7" font-weight="700">2</text>
+    <text x="420" y="200" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="15" fill="#f8fafc" font-weight="600">📝 index.html を作る</text>
+    <text x="420" y="225" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#94a3b8">HTML ファイルを</text>
+    <text x="420" y="245" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#94a3b8">リポジトリに追加</text>
+  </g>
+
+  <!-- 矢印 2→3 -->
+  <line x1="530" y1="200" x2="580" y2="200" stroke="#475569" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- STEP 3 -->
+  <g filter="url(#shadow)">
+    <rect x="580" y="100" width="220" height="180" rx="14" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.3)" stroke-width="1" />
+    <circle cx="690" cy="140" r="30" fill="url(#amber-gradient)" />
+    <circle cx="690" cy="140" r="24" fill="#0f172a" />
+    <text x="690" y="147" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="18" fill="#f59e0b" font-weight="700">3</text>
+    <text x="690" y="200" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="15" fill="#f8fafc" font-weight="600">⚙️ 公開設定を確認</text>
+    <text x="690" y="225" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#94a3b8">Settings → Pages</text>
+    <text x="690" y="245" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#94a3b8">で公開を有効化</text>
+  </g>
+
+  <!-- 完了マーカー -->
+  <g filter="url(#glow-green)">
+    <circle cx="860" cy="200" r="28" fill="url(#green-gradient)" />
+    <circle cx="860" cy="200" r="22" fill="#0f172a" />
+    <text x="860" y="207" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="22">🎉</text>
+  </g>
+
+  <!-- 所要時間 -->
+  <rect x="40" y="310" width="820" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+  <text x="450" y="340" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="14" fill="#94a3b8">
+    ⏱️ 各ステップ 5 分ずつ — 合計 15 分で公開完了！
+  </text>
+
+  <!-- フッター -->
+  <rect x="0" y="370" width="900" height="30" rx="16" fill="rgba(255,255,255,0.02)" />
+  <text x="40" y="390" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#475569">GitHub Pages 公開フロー</text>
+</svg>

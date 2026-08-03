@@ -51,6 +51,8 @@ GitHub Pages は、GitHub に保存したファイルをそのまま **Web サ�
 - ファイルを保存するだけで公開できる
 - **自分だけの専用 URL が手に入る**
 
+![GitHub Pages の仕組み](/images/blog/github-pages-intro/how-it-works.svg)
+
 ### 3 つのメリット
 
 1. **完全無料** — サーバー代も公開費用も 0 円
@@ -95,15 +97,7 @@ https://（ユーザー名）.github.io/
 
 ここからが本番です。たった 3 つのステップでサイトを公開できます。
 
-```mermaid
-%%{init: {"htmlLabels": false, "flowchart": {"wrappingWidth": 320, "padding": 16}, "fontSize": 14} }%%
-flowchart LR
-    Start(["🎬 スタート"])
-    Start --> Step1["📁 STEP 1 リポジトリを作る"]
-    Step1 --> Step2["📝 STEP 2 index.html を作る"]
-    Step2 --> Step3["⚙️ STEP 3 公開設定を確認する"]
-    Step3 --> Done(["🎉 公開完了！"])
-```
+![GitHub Pages 公開フロー](/images/blog/github-pages-intro/publish-flow.svg)
 
 それぞれ 5 分もあればできます。
 
@@ -248,18 +242,7 @@ https://（ユーザー名）.github.io/
 
 例えば、次のような構成にできます：
 
-```
-（ユーザー名）.github.io/
-├── index.html         →  /                     （トップページ）
-├── profile/
-│   └── index.html    →  /profile/              （プロフィール）
-├── portfolio/
-│   └── index.html    →  /portfolio/            （作品集）
-└── game/
-    └── index.html    →  /game/                 （ゲーム）
-```
-
-フォルダ名がそのまま URL のパスになります。
+![フォルダ構成例](/images/blog/github-pages-intro/folder-structure.svg)
 
 ---
 
