@@ -2,14 +2,21 @@
 title: "spec-kit をもっと便利に — コミュニティ拡張機能と GitHub 連携の深掘り"
 description: "本編で紹介しきれなかった、spec-kit のコミュニティ拡張機能や GitHub Issues の自動更新に関する補足情報です。"
 pubDate: 2026-07-30
-tags: ["spec-kit", "specify-cli", "github", "extension", "draft"]
-draft: true
-enableComments: false
+tags: ["spec-kit", "specify-cli", "github", "extension"]
+draft: false
+enableComments: true
 ---
 
 # spec-kit をもっと便利に — コミュニティ拡張機能と GitHub 連携の深掘り
 
-> **この記事は下書きです。** 本編「spec-kit で仕様をコードに変える」の補足として、コミュニティ拡張機能や実装完了の自動反映について詳しく解説します。
+## この記事を読んでほしい人
+
+- 既に spec-kit の基本的な使い方（`/speckit.specify` → `/speckit.tasks` → `/speckit.implement` の流れ）を知っている人
+- `/speckit.taskstoissues` を使って GitHub Issues にタスクを投稿したことがある人
+- 「Issue を作ったけど、完了したときに自動で閉じてくれないのが不便」と感じている人
+- spec-kit をチーム開発で本格的に使いたいと考えている人
+
+> 前提知識として、[spec-kit で仕様をコードに変える](/blog/spec-kit-intro) で紹介した基本的なワークフローを把握していることを想定しています。
 
 ---
 
@@ -98,5 +105,31 @@ spec-kit と GitHub の連携は、目的に応じて 3 つのパターンに分
 | **Issue → spec** | `spec-kit-github-issues` / `spec-kit-issue` | GitHub で議論してから仕様を固めたいチーム |
 | **tasks → Project** | `Tasks to GitHub Project` | 実装の完了を GitHub のボードに自動反映したいチーム ⭐ |
 | **双方向まるごと** | 上記の組み合わせ | Issue も Project も両方活用したい本格派 |
+
+---
+
+## まとめ
+
+本編では spec-kit の基本ワークフローを紹介しましたが、この記事では **「基本だけでは物足りない」** という人向けに、コミュニティ拡張機能の使い方を深掘りしました。
+
+### この記事のポイント
+
+- ✅ `/speckit.taskstoissues` で作成した Issue は、**自動的には完了/クローズされない**
+- ✅ コミュニティ拡張機能を使えば、**Issue ↔ spec の双方向同期** や **Tasks → Project の自動反映** が可能
+- ✅ **Tasks to GitHub Project** が最も汎用的で、`[x]` 完了を Done 列に自動反映できる
+- ✅ 目的に応じて **3 つの連携パターン** を使い分けると効率的
+
+### おすすめの始め方
+
+まだ拡張機能を使ったことがない人は、まず **Tasks to GitHub Project** から試してみてください。
+
+1. 拡張機能をインストール
+2. `/speckit.tasks-to-project.publish` でタスクを Project に公開
+3. `/speckit.implement` でタスクを実装
+4. `/speckit.tasks-to-project.sync` で完了状態を GitHub に反映
+
+これで、ローカルでの実装完了が GitHub のプロジェクト管理ボードに自動反映されるようになります。
+
+spec-kit は拡張機能を組み合わせることで、**ローカルの仕様管理からチームのプロジェクト管理までを一貫してつなぐ** ことができます。まずは既存のワークフローに一つづつ追加して、開発体験を向上させていきましょう。 😊 |
 
 まずは自分たちの開発スタイルに合ったパターンから試してみてください。
