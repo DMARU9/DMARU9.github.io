@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://DMARU9.github.io/sitemap-index.xml

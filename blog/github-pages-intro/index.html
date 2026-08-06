@@ -1,0 +1,231 @@
+<!DOCTYPE html><html lang="ja"><head><!-- Global Metadata --><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff"><meta name="theme-color" media="(prefers-color-scheme: dark)" content="#151819"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="sitemap" href="/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="DMARU9" href="/rss.xml"><meta name="generator" content="Astro v7.1.3"><script>
+	// This code is inlined in the head to make it instant & blocking.
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+
+	if (typeof localStorage !== 'undefined') {
+		// Watch the document element and persist user preference when it changes.
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+</script><!-- Webfont: Noto Sans JP (Japanese tech blog standard) --><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap"><!-- Canonical URL --><link rel="canonical" href="https://dmaru9.github.io/blog/github-pages-intro/"><!-- Primary Meta Tags --><title>GitHub Pages でウェブサイトを公開しよう</title><meta name="title" content="GitHub Pages でウェブサイトを公開しよう"><meta name="description" content="GitHub のアカウントを作って、はじめての Web サイトを無料で公開するまでの手順を丁寧に解説します。"><meta name="author" content="DMARU9"><!-- Open Graph / Facebook --><meta property="og:type" content="article"><meta property="og:url" content="https://dmaru9.github.io/blog/github-pages-intro/"><meta property="og:title" content="GitHub Pages でウェブサイトを公開しよう"><meta property="og:description" content="GitHub のアカウントを作って、はじめての Web サイトを無料で公開するまでの手順を丁寧に解説します。"><meta property="og:site_name" content="DMARU9"><meta property="og:locale" content="ja_JP"><meta property="og:image" content="https://dmaru9.github.io/images/og-default.svg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="article:published_time" content="2026-07-25T00:00:00.000Z"><meta property="article:author" content="DMARU9"><meta property="article:site_name" content="DMARU9"><!-- Twitter --><meta property="twitter:card" content="summary_large_image"><meta property="twitter:site" content="@DMARU00009"><meta property="twitter:title" content="GitHub Pages でウェブサイトを公開しよう"><meta property="twitter:description" content="GitHub のアカウントを作って、はじめての Web サイトを無料で公開するまでの手順を丁寧に解説します。"><meta property="twitter:image" content="https://dmaru9.github.io/images/og-default.svg"><!-- JSON-LD Structured Data --><script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"GitHub Pages でウェブサイトを公開しよう","description":"GitHub のアカウントを作って、はじめての Web サイトを無料で公開するまでの手順を丁寧に解説します。","image":"https://dmaru9.github.io/images/og-default.svg","url":"https://dmaru9.github.io/blog/github-pages-intro/","author":{"@type":"Person","name":"DMARU9","url":"https://github.com/DMARU9"},"publisher":{"@type":"Organization","name":"DMARU9","url":"https://DMARU9.github.io"},"datePublished":"2026-07-25T00:00:00.000Z","dateModified":"2026-07-25T00:00:00.000Z","inLanguage":"ja"}</script><style>.comments[data-astro-cid-75uyrz4v]{width:100%;min-width:0;margin-top:2rem;padding-top:1rem;overflow-x:clip}.comments .giscus{width:100%;min-width:0;max-width:100%}.comments iframe.giscus-frame{width:100%;min-width:0;max-width:100%;display:block}.comments[data-astro-cid-75uyrz4v] h2[data-astro-cid-75uyrz4v]{font-size:var(--text-lg);margin:0 0 .75rem}.comments-hint[data-astro-cid-75uyrz4v]{color:rgb(var(--gray));font-size:var(--text-sm);margin:0}
+.post-header[data-astro-cid-tldeq5d5],.prose[data-astro-cid-tldeq5d5]{width:var(--reading-max-width);max-width:100%;margin-left:auto;margin-right:auto}.post-header[data-astro-cid-tldeq5d5]{margin-bottom:1.4rem}nav[data-astro-cid-tldeq5d5]{color:var(--text-muted);font-size:var(--text-xs);gap:.4rem;margin-bottom:.55rem;display:flex}nav[data-astro-cid-tldeq5d5] a[data-astro-cid-tldeq5d5]{color:var(--text-muted);text-decoration:none}h1[data-astro-cid-tldeq5d5]{min-width:0;font-size:var(--text-3xl);line-height:var(--line-height-tight);letter-spacing:0;overflow-wrap:anywhere;margin:0}.description[data-astro-cid-tldeq5d5]{color:var(--text-secondary);font-size:var(--text-sm);margin:.45rem 0 0}.meta[data-astro-cid-tldeq5d5],.tags[data-astro-cid-tldeq5d5]{color:var(--text-muted);font-size:var(--text-xs);flex-wrap:wrap;gap:.35rem .8rem;margin-top:.55rem;display:flex}.tags[data-astro-cid-tldeq5d5]{margin-top:.35rem}.tags[data-astro-cid-tldeq5d5] a[data-astro-cid-tldeq5d5]{text-decoration:none}.hero-image[data-astro-cid-tldeq5d5]{margin-bottom:1.4rem}.hero-image[data-astro-cid-tldeq5d5] img[data-astro-cid-tldeq5d5]{width:100%}
+</style><link rel="stylesheet" href="/_astro/SiteLayout.DorwA-51.css"></head><body><header class="site-header" data-astro-cid-nen7h5rs><div class="header-inner" data-astro-cid-nen7h5rs><div class="brand-lockup" data-astro-cid-nen7h5rs><a class="brand" href="/" data-astro-cid-nen7h5rs>DMARU9</a><span aria-hidden="true" data-astro-cid-nen7h5rs>/</span><span class="current-section" data-astro-cid-nen7h5rs>記事</span></div><nav class="desktop-nav" aria-label="メインナビゲーション" data-astro-cid-nen7h5rs><a href="/" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6><span class="nav-index" data-astro-cid-nen7h5rs>01</span><span class="nav-label" data-astro-cid-nen7h5rs>ホーム</span></a><a href="/blog" class="active" aria-current="page" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6><span class="nav-index" data-astro-cid-nen7h5rs>02</span><span class="nav-label" data-astro-cid-nen7h5rs>記事</span></a><a href="/friends" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6><span class="nav-index" data-astro-cid-nen7h5rs>03</span><span class="nav-label" data-astro-cid-nen7h5rs>リンク</span></a><a href="/about" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6><span class="nav-index" data-astro-cid-nen7h5rs>04</span><span class="nav-label" data-astro-cid-nen7h5rs>このサイトについて</span></a></nav><div class="actions" data-astro-cid-nen7h5rs><div class="search" data-search data-index-url="/search-index.json" data-max-results="8" data-astro-cid-e66w4awt><button class="search-trigger" type="button" aria-label="記事を検索" aria-haspopup="dialog" aria-controls="search-dialog" aria-keyshortcuts="Control+K Meta+K /" data-astro-cid-e66w4awt><svg viewBox="0 0 24 24" aria-hidden="true" data-astro-cid-e66w4awt><circle cx="11" cy="11" r="6.5" data-astro-cid-e66w4awt></circle><path d="m16 16 4 4" data-astro-cid-e66w4awt></path></svg></button><dialog id="search-dialog" class="search-dialog" aria-labelledby="search-title" data-astro-cid-e66w4awt><div class="search-panel" data-astro-cid-e66w4awt><header class="search-head" data-astro-cid-e66w4awt><svg class="search-input-icon" viewBox="0 0 24 24" aria-hidden="true" data-astro-cid-e66w4awt><circle cx="11" cy="11" r="6.5" data-astro-cid-e66w4awt></circle><path d="m16 16 4 4" data-astro-cid-e66w4awt></path></svg><label id="search-title" class="sr-only" for="site-search-input" data-astro-cid-e66w4awt>記事を検索</label><input id="site-search-input" class="search-input" type="search" placeholder="タイトル、説明、タグを検索" autocomplete="off" spellcheck="false" role="combobox" aria-controls="search-results" aria-autocomplete="list" aria-expanded="false" data-astro-cid-e66w4awt><button class="search-close" type="button" aria-label="検索を閉じる" data-astro-cid-e66w4awt><svg viewBox="0 0 24 24" aria-hidden="true" data-astro-cid-e66w4awt><path d="m6 6 12 12M18 6 6 18" data-astro-cid-e66w4awt></path></svg></button></header><div class="search-body" data-astro-cid-e66w4awt><p class="search-status" role="status" aria-live="polite" data-astro-cid-e66w4awt>キーワードを入力して検索</p><ol id="search-results" class="search-results" role="listbox" hidden data-astro-cid-e66w4awt></ol></div><footer class="search-help" aria-hidden="true" data-astro-cid-e66w4awt><span data-astro-cid-e66w4awt><kbd data-astro-cid-e66w4awt>↑</kbd><kbd data-astro-cid-e66w4awt>↓</kbd> 選択</span><span data-astro-cid-e66w4awt><kbd data-astro-cid-e66w4awt>Enter</kbd> 開く</span><span data-astro-cid-e66w4awt><kbd data-astro-cid-e66w4awt>Esc</kbd> 閉じる</span></footer></div></dialog></div><script type="module" src="/_astro/SearchDialog.astro_astro_type_script_index_0_lang.CzyOtBSq.js"></script><theme-toggle data-astro-cid-l6lhmie6="true"><button type="button" aria-label="ライト/ダークモード切替" aria-pressed="false" data-astro-cid-l6lhmie6><svg class="sun" viewBox="0 0 24 24" aria-hidden="true" data-astro-cid-l6lhmie6><circle cx="12" cy="12" r="4" data-astro-cid-l6lhmie6></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" data-astro-cid-l6lhmie6></path></svg><svg class="moon" viewBox="0 0 24 24" aria-hidden="true" data-astro-cid-l6lhmie6><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z" data-astro-cid-l6lhmie6></path></svg></button></theme-toggle><script type="module">var e=class extends HTMLElement{connectedCallback(){let e=this.querySelector(`button`);if(!e||e.dataset.ready===`true`)return;e.dataset.ready=`true`;let t=()=>e.setAttribute(`aria-pressed`,String(document.documentElement.classList.contains(`dark`)));t(),e.addEventListener(`click`,()=>{document.documentElement.classList.toggle(`dark`),t()})}};customElements.get(`theme-toggle`)||customElements.define(`theme-toggle`,e);</script><button id="menu-toggle" class="menu-toggle" type="button" aria-label="ナビゲーションを開く" aria-controls="mobile-nav" aria-expanded="false" data-astro-cid-nen7h5rs><svg class="menu-icon" viewBox="0 0 24 24" aria-hidden="true" data-astro-cid-nen7h5rs><path d="M4 7h16M4 12h16M4 17h16" data-astro-cid-nen7h5rs></path></svg><svg class="close-icon" viewBox="0 0 24 24" aria-hidden="true" data-astro-cid-nen7h5rs><path d="m6 6 12 12M18 6 6 18" data-astro-cid-nen7h5rs></path></svg></button></div><nav id="mobile-nav" class="mobile-nav" aria-label="モバイルナビゲーション" aria-hidden="true" data-astro-cid-nen7h5rs><a href="/" tabindex="-1" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6><span class="nav-index" data-astro-cid-nen7h5rs>01</span><span class="nav-label" data-astro-cid-nen7h5rs>ホーム</span></a><a href="/blog" class="active" aria-current="page" tabindex="-1" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6><span class="nav-index" data-astro-cid-nen7h5rs>02</span><span class="nav-label" data-astro-cid-nen7h5rs>記事</span></a><a href="/friends" tabindex="-1" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6><span class="nav-index" data-astro-cid-nen7h5rs>03</span><span class="nav-label" data-astro-cid-nen7h5rs>リンク</span></a><a href="/about" tabindex="-1" data-astro-cid-nen7h5rs="true" data-astro-cid-evkijfd6><span class="nav-index" data-astro-cid-nen7h5rs>04</span><span class="nav-label" data-astro-cid-nen7h5rs>このサイトについて</span></a></nav></div></header><script type="module">var e=document.getElementById(`menu-toggle`),t=document.getElementById(`mobile-nav`),n=`mobile-nav-open`,r=window.matchMedia(`(max-width: 760px)`),i=()=>{try{return sessionStorage.getItem(n)===`true`}catch{return!1}},a=e=>{try{sessionStorage.setItem(n,String(e))}catch{}},o=(n,r=!0)=>{e?.setAttribute(`aria-expanded`,String(n)),e?.setAttribute(`aria-label`,n?`ナビゲーションを閉じる`:`ナビゲーションを開く`),t?.classList.toggle(`is-open`,n),t?.setAttribute(`aria-hidden`,String(!n)),t?.querySelectorAll(`a`).forEach(e=>{e.tabIndex=n?0:-1}),r&&a(n)},s=()=>o(r.matches&&i(),!1);e?.addEventListener(`click`,()=>o(e.getAttribute(`aria-expanded`)!==`true`)),document.addEventListener(`keydown`,e=>{e.key===`Escape`&&o(!1)}),r.addEventListener(`change`,s),s();</script><main class="page-container"><article class="post-article" data-astro-cid-tldeq5d5><header class="post-header" data-astro-cid-tldeq5d5><nav aria-label="パンくずリスト" data-astro-cid-tldeq5d5><a href="/blog/" data-astro-cid-tldeq5d5>記事</a></nav><h1 data-astro-cid-tldeq5d5>GitHub Pages でウェブサイトを公開しよう</h1><p class="description" data-astro-cid-tldeq5d5>GitHub のアカウントを作って、はじめての Web サイトを無料で公開するまでの手順を丁寧に解説します。</p><div class="meta" data-astro-cid-tldeq5d5><span data-astro-cid-tldeq5d5>公開日 <time datetime="2026-07-25T00:00:00.000Z">2026年7月25日</time></span><span data-astro-cid-tldeq5d5>約 6 分</span></div><div class="tags" data-astro-cid-tldeq5d5><a href="/blog/tags/github-pages/" data-astro-cid-tldeq5d5>#github-pages</a><a href="/blog/tags/tutorial/" data-astro-cid-tldeq5d5>#tutorial</a></div></header><div class="prose content-prose" data-astro-cid-tldeq5d5><h1 id="github-pages-でウェブサイトを公開しよう">GitHub Pages でウェブサイトを公開しよう</h1>
+<h2 id="目次">目次</h2>
+<ul>
+<li><a href="#%E3%81%AF%E3%81%98%E3%82%81%E3%81%AB">はじめに</a></li>
+<li><a href="#github-pages-%E3%81%A8%E3%81%AF">GitHub Pages とは？</a></li>
+<li><a href="#%E6%BA%96%E5%82%99%E3%81%99%E3%82%8B%E3%82%82%E3%81%AE">準備するもの</a></li>
+<li><a href="#3-%E3%82%B9%E3%83%86%E3%83%83%E3%83%97%E3%81%A7%E5%85%AC%E9%96%8B%E3%81%97%E3%82%88%E3%81%86">3 ステップで公開しよう</a></li>
+<li><a href="#%E5%85%AC%E9%96%8B%E5%AE%8C%E4%BA%86url-%E3%82%92%E7%A2%BA%E8%AA%8D%E3%81%97%E3%82%88%E3%81%86">公開完了！URL を確認しよう</a></li>
+<li><a href="#%E3%82%B5%E3%82%A4%E3%83%88%E3%82%92%E6%9B%B4%E6%96%B0%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF">サイトを更新するには</a></li>
+<li><a href="#%E3%83%97%E3%83%AD%E3%82%B8%E3%82%A7%E3%82%AF%E3%83%88%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF">プロジェクトを追加するには</a></li>
+<li><a href="#%E3%81%BE%E3%81%A8%E3%82%81">まとめ</a></li>
+</ul>
+<hr>
+<h2 id="はじめに">はじめに</h2>
+<p>「自分の Web サイトを持ちたい」「作ったページをインターネットに公開してみたい」</p>
+<p>そんなふうに思ったことはありませんか？ この記事では、<strong>難しいサーバーの設定やお金をかけずに</strong>、自分だけの Web サイトを公開する方法を紹介します。</p>
+<p>使うサービスは <strong>GitHub Pages</strong>。なんと <strong>完全無料</strong> でサイトを公開できます。</p>
+<hr>
+<h2 id="github-pages-とは">GitHub Pages とは？</h2>
+<h3 id="github-って何">GitHub って何？</h3>
+<p>まず、「GitHub（ギットハブ）」を知らない方のために簡単に説明します。</p>
+<p>GitHub は、世界中のプログラマーが使っている <strong>ファイルの保管・共有サービス</strong> です。</p>
+<ul>
+<li>作ったファイルをクラウド上に保存できる</li>
+<li>世界中の人と共有・協力できる</li>
+<li><strong>無料で使い始められる</strong></li>
+</ul>
+<h3 id="github-pages-とは-1">GitHub Pages とは？</h3>
+<p>GitHub Pages は、GitHub に保存したファイルをそのまま <strong>Web サイトとして公開できる無料サービス</strong> です。</p>
+<ul>
+<li>難しいサーバー設定は一切不要</li>
+<li>ファイルを保存するだけで公開できる</li>
+<li><strong>自分だけの専用 URL が手に入る</strong></li>
+</ul>
+<p><img src="/images/blog/github-pages-intro/how-it-works.svg" alt="GitHub Pages の仕組み"></p>
+<h3 id="3-つのメリット">3 つのメリット</h3>
+<ol>
+<li><strong>完全無料</strong> — サーバー代も公開費用も 0 円</li>
+<li><strong>ずっと公開され続ける</strong> — 自分で削除しない限り、サイトはずっとインターネット上に存在</li>
+<li><strong>自分だけの URL</strong> — <code>https://（ユーザー名）.github.io/</code> というアドレスが手に入る</li>
+</ol>
+<h3 id="こんなサイトが作れる">こんなサイトが作れる</h3>
+<ul>
+<li>自己紹介サイト — 就職・転職のポートフォリオに</li>
+<li>学習ノートの公開 — 勉強した内容をまとめて発信</li>
+<li>サークルや団体のサイト — イベント告知・メンバー紹介</li>
+<li>プロジェクト集 — 写真や作品を並べたギャラリー</li>
+</ul>
+<hr>
+<h2 id="準備するもの">準備するもの</h2>
+<p>必要なのはたった一つ、<strong>GitHub のアカウント（無料）</strong> だけです。</p>
+<p>特別なソフトのインストールは不要です。ブラウザだけで全ての作業が完了します。</p>
+<h3 id="アカウントの作り方">アカウントの作り方</h3>
+<p><a href="https://github.com/signup">GitHub のサインアップページ</a> からメールアドレスや Google アカウントを使って簡単に登録できます。すでにアカウントをお持ちの方はそのまま次のステップへ進んでください。</p>
+<h3 id="ユーザー名は慎重に決めよう">ユーザー名は慎重に決めよう</h3>
+<p>GitHub Pages のサイトアドレスは次の形式になります：</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>https://（ユーザー名）.github.io/</span></span></code></pre>
+<p>登録時のユーザー名がそのまま URL に使われるため、<strong>あとから変更すると URL も変わってしまう</strong> ので、最初に慎重に決めるのがおすすめです。</p>
+<ul>
+<li>✅ 英数字とハイフン（<code>-</code>）が使える</li>
+<li>❌ スペースや記号は使えない</li>
+</ul>
+<hr>
+<h2 id="3-ステップで公開しよう">3 ステップで公開しよう</h2>
+<p>ここからが本番です。たった 3 つのステップでサイトを公開できます。</p>
+<p><img src="/images/blog/github-pages-intro/publish-flow.svg" alt="GitHub Pages 公開フロー"></p>
+<p>それぞれ 5 分もあればできます。</p>
+<hr>
+<h3 id="step-1-リポジトリを作る">STEP 1: リポジトリを作る</h3>
+<p>「リポジトリ」とは、ファイルをまとめる専用のフォルダのことです。まずはこのフォルダを作ります。</p>
+<h4 id="手順">手順</h4>
+<ol>
+<li>GitHub にログインし、右上の [+] ボタンをクリック → <strong>New repository</strong> を選択</li>
+</ol>
+<blockquote>
+<p><img src="/images/blog/github-pages-intro/New_repository.webp" alt="GitHub の「+」ボタン → New repository メニュー"></p>
+</blockquote>
+<ol start="2">
+<li><strong>Repository name</strong> に <code>（ユーザー名）.github.io</code> と入力する<br>
+例：ユーザー名が <code>DMARU9</code> なら、<code>DMARU9.github.io</code></li>
+<li><strong>Public</strong>（公開）が選ばれていることを確認する</li>
+<li><strong>Create repository</strong> ボタンをクリック</li>
+</ol>
+<blockquote>
+<p><img src="/images/blog/github-pages-intro/create_repository.webp" alt="リポジトリ作成"></p>
+</blockquote>
+<h4 id="リポジトリ名のルール">リポジトリ名のルール</h4>
+<p><code>（ユーザー名）.github.io</code> という名前は GitHub の特別なルールです。この名前のリポジトリがそのまま <strong>あなたのサイトのトップページ</strong> になります。</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>ユーザー名</th><th>リポジトリ名</th><th>公開される URL</th></tr></thead><tbody><tr><td><code>DMARU9</code></td><td><code>DMARU9.github.io</code></td><td><code>https://DMARU9.github.io/</code></td></tr><tr><td><code>taro123</code></td><td><code>taro123.github.io</code></td><td><code>https://taro123.github.io/</code></td></tr></tbody></table>
+<blockquote>
+<p><strong>⚠️ 注意</strong>: GitHub Pages は無料プランでもプライベートリポジトリで使用できます。ただし、プライベートリポジトリの GitHub Pages サイトは、<strong>リポジトリにアクセス権限を持つユーザーのみが閲覧できます</strong>。<br>
+サイトを<strong>世界中の誰にでも公開したい</strong>場合は、リポジトリを <strong>Public（公開）</strong> に設定してください。Public リポジトリのすべてのファイルが誰でも閲覧できる状態になるため、<strong>パスワードや個人情報など、他人に見られたくない情報は置かない</strong> ようにしましょう。</p>
+</blockquote>
+<hr>
+<h3 id="step-2-indexhtml-を作る">STEP 2: index.html を作る</h3>
+<p>リポジトリの中に HTML ファイルを作ります。このファイルが Web サイトの「中身」になります。</p>
+<h4 id="手順-1">手順</h4>
+<ol>
+<li>リポジトリのページで <strong>Add file</strong> → <strong>Create new file</strong> をクリック</li>
+</ol>
+<blockquote>
+<p><img src="/images/blog/github-pages-intro/add_file.webp" alt="Add file ボタン"></p>
+</blockquote>
+<ol start="2">
+<li>ファイル名の欄に <code>index.html</code> と入力する</li>
+</ol>
+<blockquote>
+<p><img src="/images/blog/github-pages-intro/index_html.webp" alt="index_html"></p>
+</blockquote>
+<h4 id="なぜindexhtmlという名前なのか">なぜ「index.html」という名前なのか？</h4>
+<p>Web サーバーには <strong>「フォルダを開いたとき、まず <code>index.html</code> を表示する」</strong> というルールがあります。</p>
+<ul>
+<li><code>https://example.com/</code> にアクセス → <code>index.html</code> が表示される</li>
+<li><code>https://example.com/profile/</code> にアクセス → <code>profile/index.html</code> が表示される</li>
+</ul>
+<p>このルールのおかげで、URL に <code>index.html</code> と書かなくてもページが表示されるのです。</p>
+<h4 id="中身を書いてみよう">中身を書いてみよう</h4>
+<p>ファイル名を入力したら、エディターの部分に以下の HTML をコピー＆ペーストしてみましょう。</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto;" tabindex="0" data-language="html"><code><span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;!</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">DOCTYPE</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> html</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">html</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> lang</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"ja"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">head</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">meta</span><span style="--shiki-light:#6F42C1;--shiki-dark:#B392F0"> charset</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">=</span><span style="--shiki-light:#032F62;--shiki-dark:#9ECBFF">"UTF-8"</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">title</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>○○○のホームページ&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">title</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">head</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">body</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">h1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>こんにちは！&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">h1</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>○○○のホームページへようこそ。&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>趣味：読書、カメラ、旅行&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">  &#x3C;</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">>少しずつ更新していきます。&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">p</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">body</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span>
+<span class="line"><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">&#x3C;/</span><span style="--shiki-light:#22863A;--shiki-dark:#85E89D">html</span><span style="--shiki-light:#24292E;--shiki-dark:#E1E4E8">></span></span></code></pre>
+<h4 id="ファイルを保存する">ファイルを保存する</h4>
+<ol>
+<li>ページの右上にある <strong>Commit changes…</strong> ボタンをクリック</li>
+<li>ダイアログが表示されたら、<strong>Commit message</strong> の欄にメッセージを入力（例：「最初のページを作成」）</li>
+<li><strong>Commit changes</strong> ボタンをクリック</li>
+</ol>
+<hr>
+<h3 id="step-3-公開設定を確認する">STEP 3: 公開設定を確認する</h3>
+<p>デフォルトで公開スイッチは入っているはずですが、念のため確認しましょう。</p>
+<h4 id="手順-2">手順</h4>
+<ol>
+<li>リポジトリページ上部の <strong>Settings</strong> タブをクリック</li>
+<li>左のメニューから <strong>Pages</strong> を選択</li>
+</ol>
+<blockquote>
+<p><img src="/images/blog/github-pages-intro/pages.webp" alt="pages"></p>
+</blockquote>
+<ol start="3">
+<li>「Your site is live at <code>https://（ユーザー名）.github.io/</code>」と表示されていれば OK！</li>
+</ol>
+<blockquote>
+<p><img src="/images/blog/github-pages-intro/visit_site.webp" alt="visit_site"></p>
+</blockquote>
+<p>表示されない場合は 2〜3 分待ってからページを再読み込みしてみてください。</p>
+<hr>
+<h2 id="公開完了url-を確認しよう">公開完了！URL を確認しよう</h2>
+<p>以下の URL にアクセスすると、先ほど入力した <code>index.html</code> の内容が Web ページとして表示されます。</p>
+<pre class="astro-code astro-code-themes github-light github-dark" style="--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>https://（ユーザー名）.github.io/</span></span></code></pre>
+<p>スマートフォンからも見ることができます。表示されない場合は、ユーザー名を間違えていないか確認してみてください。</p>
+<p>おめでとうございます！<strong>これであなただけの Web サイトが公開できました！</strong> 🎉</p>
+<hr>
+<h2 id="サイトを更新するには">サイトを更新するには</h2>
+<p>サイトの内容を変えたいときは、ファイルを編集するだけです。</p>
+<h4 id="手順-3">手順</h4>
+<ol>
+<li>リポジトリで編集したいファイル（例：<code>index.html</code>）を選択</li>
+<li>右上の鉛筆アイコン（✏️）をクリック</li>
+<li>内容を書き換える</li>
+<li><strong>Commit changes…</strong> を押して保存</li>
+</ol>
+<p>2〜3 分ほどで変更が Web サイトに反映されます。</p>
+<hr>
+<h2 id="プロジェクトを追加するには">プロジェクトを追加するには</h2>
+<p>新しいプロジェクト（作品）を追加するときも、同じリポジトリの中にフォルダを作るだけです。</p>
+<p>例えば、次のような構成にできます：</p>
+<p><img src="/images/blog/github-pages-intro/folder-structure.svg" alt="フォルダ構成例"></p>
+<hr>
+<h2 id="まとめ">まとめ</h2>
+<p>GitHub Pages でできることのおさらいです。</p>
+<p><strong>✅ 無料で Web サイトを公開できる</strong><br>
+<strong>✅ 自分だけの URL（<code>https://（ユーザー名）.github.io/</code>）が手に入る</strong></p>
+<p>公開の 3 ステップ：</p>
+<ol>
+<li><code>（ユーザー名）.github.io</code> という名前のリポジトリを作る</li>
+<li><code>index.html</code> を追加して保存する</li>
+<li><code>https://（ユーザー名）.github.io/</code> にアクセスして確認する</li>
+</ol>
+<p>あとは自由にカスタマイズしたり、新しいページを追加したりして、自分だけのサイトを育てていってください。</p>
+<p>さっそく、自分だけのサイトを作ってみましょう！ 🚀</p></div></article></main><footer class="site-footer" data-astro-cid-jo6i4kqk><div class="footer-inner" data-astro-cid-jo6i4kqk><p data-astro-cid-jo6i4kqk>© 2026 DMARU9 · Powered by Astro</p><div class="social-links" data-astro-cid-jo6i4kqk><a href="https://github.com/DMARU9" target="_blank" rel="noopener noreferrer" data-astro-cid-jo6i4kqk><span class="sr-only" data-astro-cid-jo6i4kqk>GitHub</span><svg viewBox="0 0 24 24" aria-hidden="true" width="20" height="20" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg></a></div></div></footer><script type="module">var e=async e=>{if(!navigator.clipboard)throw Error(`Clipboard unavailable`);await navigator.clipboard.writeText(e)};document.querySelectorAll(`.content-prose pre, .exchange-section pre`).forEach(t=>{if(t.closest(`.code-block`))return;let n=t.querySelector(`code`);if(!n)return;let r=document.createElement(`div`);r.className=`code-block`,t.before(r),r.append(t);let i=document.createElement(`button`);i.className=`code-copy-button`,i.type=`button`,i.textContent=`コピー`,i.setAttribute(`aria-label`,`コードをコピー`),i.setAttribute(`aria-live`,`polite`),r.append(i),i.addEventListener(`click`,async()=>{try{await e(n.textContent??``),i.textContent=`コピー完了`,i.dataset.state=`success`}catch{i.textContent=`コピー失敗`,i.dataset.state=`error`}window.setTimeout(()=>{i.textContent=`コピー`,i.dataset.state=``},1600)})});</script></body></html><script type="module">document.addEventListener(`click`,e=>{let t=e.target.closest(`.content-prose img, .hero-image img`),n=t?null:e.target.closest(`.content-prose svg[id^="mermaid-"]`),r=t||n;if(!r||r.closest(`.lightbox-overlay`))return;let i=document.documentElement.classList.contains(`dark`),a=document.createElement(`div`);if(a.className=`lightbox-overlay`,a.style.cssText=`position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:${i?`rgba(0,0,0,.85)`:`rgba(0,0,0,.7)`};cursor:zoom-out;opacity:0;transition:opacity .25s ease;`,t)a.innerHTML=`<img src="${t.src}" alt="${t.alt||``}" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:6px;box-shadow:0 8px 40px rgba(0,0,0,.4);cursor:default;">`;else{let e=n.cloneNode(!0);e.removeAttribute(`width`),e.style.maxWidth=`90vw`,e.style.maxHeight=`90vh`,e.style.width=`auto`,e.style.height=`auto`,e.style.borderRadius=`6px`,e.style.boxShadow=`0 8px 40px rgba(0,0,0,.4)`,e.style.background=i?`#1e1e1e`:`#fff`,e.style.cursor=`default`,a.appendChild(e)}let o=()=>{a.style.opacity=`0`,setTimeout(()=>{a.parentNode&&a.remove()},260),document.removeEventListener(`keydown`,s)},s=e=>{e.key===`Escape`&&o()};a.addEventListener(`click`,e=>{e.target===a&&o()});let c=a.querySelector(`img, svg`);c&&c.addEventListener(`click`,e=>e.stopPropagation()),document.addEventListener(`keydown`,s),document.body.appendChild(a),a.offsetHeight,a.style.opacity=`1`});</script>

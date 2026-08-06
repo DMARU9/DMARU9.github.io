@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 320" role="img" aria-label="100 Seeds Challenge の流れ: 課題発見からサービス育成までの4ステップ">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a" />
+      <stop offset="100%" style="stop-color:#1e293b" />
+    </linearGradient>
+    <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6" />
+      <stop offset="100%" style="stop-color:#2563eb" />
+    </linearGradient>
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7" />
+      <stop offset="100%" style="stop-color:#9333ea" />
+    </linearGradient>
+    <linearGradient id="amber-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b" />
+      <stop offset="100%" style="stop-color:#d97706" />
+    </linearGradient>
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e" />
+      <stop offset="100%" style="stop-color:#16a34a" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3" />
+    </filter>
+    <filter id="glow-blue">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#3b82f6" flood-opacity="0.4" />
+    </filter>
+    <filter id="glow-purple">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#a855f7" flood-opacity="0.4" />
+    </filter>
+    <filter id="glow-amber">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#f59e0b" flood-opacity="0.4" />
+    </filter>
+    <filter id="glow-green">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#22c55e" flood-opacity="0.4" />
+    </filter>
+    <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#475569" />
+    </marker>
+  </defs>
+
+  <!-- ダーク背景 -->
+  <rect width="100%" height="100%" fill="url(#bg-gradient)" rx="16" />
+
+  <!-- タイトルバー -->
+  <rect x="0" y="0" width="900" height="52" rx="16" fill="rgba(255,255,255,0.05)" />
+  <rect x="0" y="36" width="900" height="16" fill="rgba(255,255,255,0.05)" />
+  <text x="40" y="34" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-size="18" font-weight="700" fill="#f8fafc">
+    🌱 100 Seeds Challenge の流れ
+  </text>
+
+  <!-- Step 1: 課題を見つける -->
+  <g filter="url(#glow-blue)">
+    <rect x="30" y="90" width="170" height="170" rx="14" fill="rgba(59,130,246,0.08)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+  </g>
+  <circle cx="115" cy="135" r="30" fill="url(#blue-gradient)" />
+  <text x="115" y="142" text-anchor="middle" font-size="28">🔍</text>
+  <text x="115" y="185" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="15" font-weight="700" fill="#f8fafc">課題を見つける</text>
+  <text x="115" y="210" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#94a3b8">困りごとを発見</text>
+  <text x="115" y="240" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="22" fill="#3b82f6" font-weight="700">100個</text>
+
+  <!-- 矢印 1→2 -->
+  <line x1="210" y1="175" x2="248" y2="175" stroke="#475569" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Step 2: 仮説を立てる -->
+  <g filter="url(#glow-purple)">
+    <rect x="252" y="90" width="170" height="170" rx="14" fill="rgba(168,85,247,0.08)" stroke="rgba(168,85,247,0.3)" stroke-width="1" />
+  </g>
+  <circle cx="337" cy="135" r="30" fill="url(#purple-gradient)" />
+  <text x="337" y="142" text-anchor="middle" font-size="28">💡</text>
+  <text x="337" y="185" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="15" font-weight="700" fill="#f8fafc">仮説を立てる</text>
+  <text x="337" y="210" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#94a3b8">解決策を仮説化</text>
+  <text x="337" y="240" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="22" fill="#a855f7" font-weight="700">100個</text>
+
+  <!-- 矢印 2→3 -->
+  <line x1="432" y1="175" x2="470" y2="175" stroke="#475569" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Step 3: プロダクトを公開する -->
+  <g filter="url(#glow-amber)">
+    <rect x="474" y="90" width="170" height="170" rx="14" fill="rgba(245,158,11,0.08)" stroke="rgba(245,158,11,0.3)" stroke-width="1" />
+  </g>
+  <circle cx="559" cy="135" r="30" fill="url(#amber-gradient)" />
+  <text x="559" y="142" text-anchor="middle" font-size="28">🛠️</text>
+  <text x="559" y="185" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="15" font-weight="700" fill="#f8fafc">プロダクトを公開</text>
+  <text x="559" y="210" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#94a3b8">MVP を世に出す</text>
+  <text x="559" y="240" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="22" fill="#f59e0b" font-weight="700">100個</text>
+
+  <!-- 矢印 3→4 -->
+  <line x1="654" y1="175" x2="692" y2="175" stroke="#475569" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- Step 4: 価値あるサービスを育てる -->
+  <g filter="url(#glow-green)">
+    <rect x="696" y="90" width="170" height="170" rx="14" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.3)" stroke-width="1" />
+  </g>
+  <circle cx="781" cy="135" r="30" fill="url(#green-gradient)" />
+  <text x="781" y="142" text-anchor="middle" font-size="28">🌱</text>
+  <text x="781" y="185" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="15" font-weight="700" fill="#f8fafc">価値を育てる</text>
+  <text x="781" y="210" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#94a3b8">成長するものだけ</text>
+  <text x="781" y="240" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="22" fill="#22c55e" font-weight="700">選ぶ</text>
+
+  <!-- フッター -->
+  <rect x="0" y="290" width="900" height="30" rx="16" fill="rgba(255,255,255,0.02)" />
+  <text x="40" y="310" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#475569">
+    「動いたから終わり」ではなく、「公開して、説明して、振り返る」までがワンセット
+  </text>
+</svg>

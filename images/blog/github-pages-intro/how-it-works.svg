@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img" aria-label="GitHub Pages の仕組み">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a" />
+      <stop offset="100%" style="stop-color:#1e293b" />
+    </linearGradient>
+    <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6" />
+      <stop offset="100%" style="stop-color:#2563eb" />
+    </linearGradient>
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7" />
+      <stop offset="100%" style="stop-color:#9333ea" />
+    </linearGradient>
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e" />
+      <stop offset="100%" style="stop-color:#16a34a" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+    <filter id="glow-blue">
+      <feDropShadow dx="0" dy="0" stdDeviation="6" flood-color="#3b82f6" flood-opacity="0.4"/>
+    </filter>
+    <marker id="arrowhead" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#475569" />
+    </marker>
+  </defs>
+
+  <!-- ダーク背景 -->
+  <rect width="100%" height="100%" fill="url(#bg-gradient)" rx="16" />
+
+  <!-- タイトル -->
+  <rect x="0" y="0" width="900" height="56" rx="16" fill="rgba(255,255,255,0.05)" />
+  <text x="40" y="36" font-family="'Noto Sans JP', sans-serif" font-size="20" font-weight="700" fill="#f8fafc">🌐 GitHub Pages の仕組み</text>
+
+  <!-- あなたのコンピュータ -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="90" width="200" height="160" rx="14" fill="rgba(59,130,246,0.08)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+    <rect x="40" y="90" width="200" height="36" rx="14" fill="url(#blue-gradient)" />
+    <rect x="40" y="112" width="200" height="14" fill="url(#blue-gradient)" />
+    <text x="140" y="115" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#fff" font-weight="600">💻 あなたのコンピュータ</text>
+    <text x="140" y="155" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="28">🖥️</text>
+    <text x="140" y="190" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#e2e8f0">index.html</text>
+    <text x="140" y="210" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#e2e8f0">style.css</text>
+    <text x="140" y="230" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#e2e8f0">script.js</text>
+  </g>
+
+  <!-- 矢印 1→2 -->
+  <line x1="240" y1="170" x2="310" y2="170" stroke="#475569" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="275" y="158" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="10" fill="#64748b">git push</text>
+
+  <!-- GitHub -->
+  <g filter="url(#glow-blue)">
+    <rect x="310" y="90" width="200" height="160" rx="14" fill="rgba(168,85,247,0.08)" stroke="rgba(168,85,247,0.3)" stroke-width="1" />
+    <rect x="310" y="90" width="200" height="36" rx="14" fill="url(#purple-gradient)" />
+    <rect x="310" y="112" width="200" height="14" fill="url(#purple-gradient)" />
+    <text x="410" y="115" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#fff" font-weight="600">📦 GitHub リポジトリ</text>
+    <text x="410" y="155" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="28">🐙</text>
+    <text x="410" y="190" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#e2e8f0">ファイルが保存される</text>
+    <text x="410" y="210" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#e2e8f0">バージョン管理される</text>
+    <text x="410" y="230" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#e2e8f0">谁でも閲覧可能</text>
+  </g>
+
+  <!-- 矢印 2→3 -->
+  <line x1="510" y1="170" x2="580" y2="170" stroke="#475569" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="545" y="158" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="10" fill="#64748b">自動公開</text>
+
+  <!-- GitHub Pages -->
+  <g filter="url(#shadow)">
+    <rect x="580" y="90" width="200" height="160" rx="14" fill="rgba(34,197,94,0.08)" stroke="rgba(34,197,94,0.3)" stroke-width="1" />
+    <rect x="580" y="90" width="200" height="36" rx="14" fill="url(#green-gradient)" />
+    <rect x="580" y="112" width="200" height="14" fill="url(#green-gradient)" />
+    <text x="680" y="115" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#fff" font-weight="600">🌍 GitHub Pages</text>
+    <text x="680" y="155" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="28">🚀</text>
+    <text x="680" y="190" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#e2e8f0">Web サイトとして公開</text>
+    <text x="680" y="210" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#e2e8f0">無料でホスティング</text>
+    <text x="680" y="230" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#e2e8f0">SSL 対応（https）</text>
+  </g>
+
+  <!-- 矢印 3→4 -->
+  <line x1="780" y1="170" x2="840" y2="170" stroke="#475569" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- ブラウザ -->
+  <g filter="url(#shadow)">
+    <rect x="840" y="120" width="50" height="100" rx="8" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.15)" stroke-width="1" />
+    <text x="865" y="175" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="24">📱</text>
+  </g>
+
+  <!-- URL バナー -->
+  <rect x="40" y="280" width="820" height="60" rx="12" fill="rgba(59,130,246,0.1)" stroke="rgba(59,130,246,0.3)" stroke-width="1" />
+  <text x="60" y="315" font-family="monospace" font-size="14" fill="#3b82f6">https://</text>
+  <text x="175" y="315" font-family="monospace" font-size="14" fill="#f8fafc" font-weight="600">username</text>
+  <text x="270" y="315" font-family="monospace" font-size="14" fill="#3b82f6">.github.io/</text>
+
+  <!-- まとめ -->
+  <rect x="40" y="360" width="820" height="50" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)" stroke-width="1" />
+  <text x="450" y="390" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#94a3b8">
+    💡 ファイルを GitHub に保存するだけで、自動的に Web サイトが公開される！
+  </text>
+
+  <!-- フッター -->
+  <rect x="0" y="420" width="900" height="30" rx="16" fill="rgba(255,255,255,0.02)" />
+  <text x="40" y="440" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#475569">GitHub Pages の仕組み</text>
+</svg>

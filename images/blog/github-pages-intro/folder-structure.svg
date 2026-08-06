@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 480" role="img" aria-label="フォルダ構成例">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a" />
+      <stop offset="100%" style="stop-color:#1e293b" />
+    </linearGradient>
+    <linearGradient id="blue-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6" />
+      <stop offset="100%" style="stop-color:#2563eb" />
+    </linearGradient>
+    <linearGradient id="purple-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#a855f7" />
+      <stop offset="100%" style="stop-color:#9333ea" />
+    </linearGradient>
+    <linearGradient id="green-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e" />
+      <stop offset="100%" style="stop-color:#16a34a" />
+    </linearGradient>
+    <linearGradient id="amber-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b" />
+      <stop offset="100%" style="stop-color:#d97706" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+
+  <!-- ダーク背景 -->
+  <rect width="100%" height="100%" fill="url(#bg-gradient)" rx="16" />
+
+  <!-- タイトル -->
+  <rect x="0" y="0" width="900" height="56" rx="16" fill="rgba(255,255,255,0.05)" />
+  <text x="40" y="36" font-family="'Noto Sans JP', sans-serif" font-size="20" font-weight="700" fill="#f8fafc">📂 フォルダ構成例</text>
+
+  <!-- 左側：フォルダツリー -->
+  <g filter="url(#shadow)">
+    <rect x="40" y="80" width="400" height="340" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+    <rect x="40" y="80" width="400" height="36" rx="14" fill="rgba(59,130,246,0.15)" />
+    <rect x="40" y="102" width="400" height="14" fill="rgba(59,130,246,0.15)" />
+    <text x="240" y="105" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#3b82f6" font-weight="600">📁 リポジトリ構成</text>
+
+    <!-- フォルダツリー -->
+    <text x="70" y="145" font-family="monospace" font-size="13" fill="#f8fafc" font-weight="600">username.github.io/</text>
+
+    <!-- index.html -->
+    <text x="90" y="175" font-family="monospace" font-size="12" fill="#22c55e">├──</text>
+    <text x="130" y="175" font-family="monospace" font-size="12" fill="#f59e0b">📄</text>
+    <text x="150" y="175" font-family="monospace" font-size="12" fill="#f8fafc">index.html</text>
+    <text x="290" y="175" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#64748b">← トップページ</text>
+
+    <!-- profile/ -->
+    <text x="90" y="205" font-family="monospace" font-size="12" fill="#22c55e">├──</text>
+    <text x="130" y="205" font-family="monospace" font-size="12" fill="#3b82f6">📁</text>
+    <text x="150" y="205" font-family="monospace" font-size="12" fill="#f8fafc">profile/</text>
+    <text x="270" y="205" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#64748b">← プロフィール</text>
+
+    <text x="110" y="235" font-family="monospace" font-size="12" fill="#22c55e">│   └──</text>
+    <text x="190" y="235" font-family="monospace" font-size="12" fill="#f59e0b">📄</text>
+    <text x="210" y="235" font-family="monospace" font-size="12" fill="#f8fafc">index.html</text>
+
+    <!-- portfolio/ -->
+    <text x="90" y="265" font-family="monospace" font-size="12" fill="#22c55e">├──</text>
+    <text x="130" y="265" font-family="monospace" font-size="12" fill="#3b82f6">📁</text>
+    <text x="150" y="265" font-family="monospace" font-size="12" fill="#f8fafc">portfolio/</text>
+    <text x="280" y="265" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#64748b">← 作品集</text>
+
+    <text x="110" y="295" font-family="monospace" font-size="12" fill="#22c55e">│   └──</text>
+    <text x="190" y="295" font-family="monospace" font-size="12" fill="#f59e0b">📄</text>
+    <text x="210" y="295" font-family="monospace" font-size="12" fill="#f8fafc">index.html</text>
+
+    <!-- game/ -->
+    <text x="90" y="325" font-family="monospace" font-size="12" fill="#22c55e">└──</text>
+    <text x="130" y="325" font-family="monospace" font-size="12" fill="#3b82f6">📁</text>
+    <text x="150" y="325" font-family="monospace" font-size="12" fill="#f8fafc">game/</text>
+    <text x="250" y="325" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#64748b">← ゲーム</text>
+
+    <text x="110" y="355" font-family="monospace" font-size="12" fill="#22c55e">    └──</text>
+    <text x="190" y="355" font-family="monospace" font-size="12" fill="#f59e0b">📄</text>
+    <text x="210" y="355" font-family="monospace" font-size="12" fill="#f8fafc">index.html</text>
+
+    <!-- 補足 -->
+    <text x="70" y="395" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#64748b">※ フォルダ名 = URL のパス</text>
+  </g>
+
+  <!-- 右側：URL 対応表 -->
+  <g filter="url(#shadow)">
+    <rect x="470" y="80" width="390" height="340" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+    <rect x="470" y="80" width="390" height="36" rx="14" fill="rgba(168,85,247,0.15)" />
+    <rect x="470" y="102" width="390" height="14" fill="rgba(168,85,247,0.15)" />
+    <text x="665" y="105" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#a855f7" font-weight="600">🔗 URL 対応表</text>
+
+    <!-- ヘッダー -->
+    <text x="500" y="145" font-family="'Noto Sans JP', sans-serif" font-size="12" font-weight="600" fill="#94a3b8">フォルダ</text>
+    <text x="650" y="145" font-family="'Noto Sans JP', sans-serif" font-size="12" font-weight="600" fill="#94a3b8">アクセスURL</text>
+
+    <!-- 区切り線 -->
+    <line x1="490" y1="155" x2="840" y2="155" stroke="rgba(255,255,255,0.1)" stroke-width="1" />
+
+    <!-- トップ -->
+    <rect x="490" y="165" width="340" height="36" rx="6" fill="rgba(34,197,94,0.1)" />
+    <text x="510" y="188" font-family="monospace" font-size="12" fill="#22c55e">/</text>
+    <text x="650" y="188" font-family="monospace" font-size="12" fill="#f8fafc">username.github.io/</text>
+
+    <!-- profile -->
+    <rect x="490" y="210" width="340" height="36" rx="6" fill="rgba(59,130,246,0.1)" />
+    <text x="510" y="233" font-family="monospace" font-size="12" fill="#3b82f6">/profile/</text>
+    <text x="650" y="233" font-family="monospace" font-size="12" fill="#f8fafc">username.github.io/profile/</text>
+
+    <!-- portfolio -->
+    <rect x="490" y="255" width="340" height="36" rx="6" fill="rgba(168,85,247,0.1)" />
+    <text x="510" y="278" font-family="monospace" font-size="12" fill="#a855f7">/portfolio/</text>
+    <text x="650" y="278" font-family="monospace" font-size="12" fill="#f8fafc">username.github.io/portfolio/</text>
+
+    <!-- game -->
+    <rect x="490" y="300" width="340" height="36" rx="6" fill="rgba(245,158,11,0.1)" />
+    <text x="510" y="323" font-family="monospace" font-size="12" fill="#f59e0b">/game/</text>
+    <text x="650" y="323" font-family="monospace" font-size="12" fill="#f8fafc">username.github.io/game/</text>
+
+    <!-- ポイント -->
+    <rect x="490" y="355" width="340" height="50" rx="8" fill="rgba(255,255,255,0.03)" />
+    <text x="510" y="378" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#f59e0b">💡 ポイント</text>
+    <text x="510" y="396" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#94a3b8">index.html は省略して OK</text>
+  </g>
+
+  <!-- フッター -->
+  <rect x="0" y="440" width="900" height="40" rx="16" fill="rgba(255,255,255,0.02)" />
+  <text x="40" y="465" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#475569">フォルダ構成例 — URL との対応関係</text>
+</svg>
