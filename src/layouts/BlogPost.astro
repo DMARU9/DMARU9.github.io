@@ -11,7 +11,7 @@ type BlogPostData = CollectionEntry<"blog">["data"];
 interface Props extends BlogPostData { body?: string; enableComments?: boolean }
 const { title, description, pubDate, updatedDate, heroImage, collection, tags = [], body = "", enableComments = false } = Astro.props;
 ---
-<SiteLayout title={title} description={description} image={heroImage} type="article">
+<SiteLayout title={title} description={description} image={heroImage} type="article" publishedTime={pubDate} updatedTime={updatedDate}>
   <article class="post-article">
     <header class="post-header">
       <nav aria-label="パンくずリスト"><a href={withBase("/blog/")}>記事</a>{collection && <span>/</span>}{collection && <a href={withBase(collectionPath(collection))}>{collection}</a>}</nav>

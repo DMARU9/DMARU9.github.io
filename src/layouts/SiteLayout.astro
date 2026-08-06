@@ -12,15 +12,18 @@ type Props = {
   lang?: string;
   image?: ImageMetadata;
   type?: "website" | "article";
+  publishedTime?: Date;
+  updatedTime?: Date;
+  author?: string;
 };
 
-const { title, description, lang = "ja", image, type = "website" } = Astro.props;
+const { title, description, lang = "ja", image, type = "website", publishedTime, updatedTime, author } = Astro.props;
 ---
 
 <!doctype html>
 <html lang={lang}>
   <head>
-    <BaseHead title={title} description={description} image={image} type={type} />
+    <BaseHead title={title} description={description} image={image} type={type} publishedTime={publishedTime} updatedTime={updatedTime} author={author} />
     <slot name="head" />
   </head>
   <body>
