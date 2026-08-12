@@ -24,3 +24,6 @@ pnpm-debug.log*
 # IDE & editor settings
 .idea/
 .vscode/
+
+# temporary files
+tmp
